@@ -1,0 +1,45 @@
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Streamlit cache
+.streamlit/secrets.toml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vector DB / embeddings
+faiss_index/
+chroma_db/
+
+# Uploaded documents
+uploads/
+data/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+Backend/myenv/
+Frontend/env/
+__pycache__/
+*.pyc
+.env
+
+Backend/key.txt
