@@ -24,7 +24,7 @@ if uploaded_file is not None:
         with st.spinner("Processing PDF..."):
 
             response = requests.post(
-                "http://127.0.0.1:8000/upload",
+                "https://ai-document-analyzer-backend-n5n2.onrender.com/upload",
                 files=files
             )
 
@@ -51,7 +51,7 @@ if st.session_state.get("pdf_uploaded", False):
             st.write(query)
 
         response = requests.post(
-            "http://127.0.0.1:8000/query",
+            "https://ai-document-analyzer-backend-n5n2.onrender.com/query",
             json={"query": query}
         )
 
