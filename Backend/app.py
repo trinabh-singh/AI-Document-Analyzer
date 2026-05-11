@@ -5,6 +5,8 @@ from pydantic import BaseModel
 from ragpipeline import ask_question
 from ragpipeline import load_pdf
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
 
 class QueryRequest(BaseModel):
@@ -37,3 +39,11 @@ async def upload_pdf(file: UploadFile = File(...)):
     return {
         "message": "PDF uploaded successfully"
     }
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
