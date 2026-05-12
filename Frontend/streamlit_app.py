@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.title("PDF RAG Chatbot")
+st.title("PDF Chatbot")
 
 uploaded_file = st.file_uploader(
     "Upload a PDF",
@@ -24,7 +24,7 @@ if uploaded_file is not None:
         with st.spinner("Processing PDF..."):
 
             response = requests.post(
-                "https://ai-document-analyzer-backend-n5n2.onrender.com/upload",
+                "https://ai-document-analyzer-production-dbe6.up.railway.app/upload",
                 files=files
             )
 
@@ -51,7 +51,7 @@ if st.session_state.get("pdf_uploaded", False):
             st.write(query)
 
         response = requests.post(
-            "https://ai-document-analyzer-backend-n5n2.onrender.com/query",
+            "https://ai-document-analyzer-production-dbe6.up.railway.app/query",
             json={"query": query}
         )
 
